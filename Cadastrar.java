@@ -1,17 +1,15 @@
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.xml.crypto.Data;
+
 
 
 public class Cadastrar extends javax.swing.JPanel {
     static private int id;
     
     private int cont =0;
+    private int max = 10;
     private Relatorio a = new Relatorio();
-    private Pessoa aluno [] = new Pessoa[10];
-    private Professor professor [] = new Professor[10];
+    private Pessoa aluno [] = new Pessoa[max];
+    private Professor professor [] = new Professor[max];
     
     public Cadastrar() {
         initComponents();        
@@ -163,7 +161,7 @@ public class Cadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_tipocaixaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        if(cont<max)
             if(tipocaixa.getSelectedItem()=="Aluno"){
                 aluno[cont]= new Pessoa();
                 aluno[cont].cadastraPessoa(nome.getText(),cpf.getText(),
@@ -177,6 +175,14 @@ public class Cadastrar extends javax.swing.JPanel {
                 cont +=1;         
             
             }
+        else
+            System.out.println("Numero maximo atingido");
+        nome.setText("");
+        cpf.setText("");
+        data.setText("");
+        data1.setText("");
+        peso.setText("");
+        
             
             
         

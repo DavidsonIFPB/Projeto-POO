@@ -9,8 +9,7 @@
  * @author Davidson
  */
 public class Relatorio extends javax.swing.JFrame {
-
-        private int cont =0;
+        
         private Pessoa aluno [] = new Pessoa[10];
         private Professor professor [] = new Professor[10]; 
         
@@ -42,6 +41,9 @@ public class Relatorio extends javax.swing.JFrame {
 
         area.setColumns(20);
         area.setRows(5);
+        area.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        area.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        area.setEnabled(false);
         jScrollPane1.setViewportView(area);
 
         jButton1.setText("Alunos");
@@ -90,29 +92,14 @@ public class Relatorio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        area.setText("");
-        /*
-        aluno[cont] = new Pessoa();
-        
-        aluno[cont].cadastraPessoa("Davidson","0991797","12/01/1989","10/09/2017", 78.9);
-        //aluno[cont].Relatorio(80);
-        aluno[cont+1] = new Pessoa();
-        aluno[cont+1].cadastraPessoa("Teste","0991797","12/01/1989","10/09/2017", 78.9);
-        
-        professor[cont] = new Professor();
-        
-        professor[0].cadastraPessoa("Roberto","111.111.111-11","12/10/1980", "11/09/2017",98);
-        */
-        String texto="";
-        
+        area.setText("");       
+        String texto="";        
         for(Pessoa a : aluno){ 
-            if(a!=null){
-              
+            if(a!=null){              
                     texto += a.Relatorio()+"\n";
-                    area.setText(texto);
-                    //System.out.println("\n--------------------");
+                    area.setText(texto);                    
             }  
-        }           
+        }          
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

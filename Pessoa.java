@@ -19,13 +19,7 @@ public class Pessoa {
     public String getDatadePagamento(){
         return this.datadePagamento;
     }
-    
-    
-    
-    
 
-    
-    
     public void cadastraPessoa(String nome,String CPF,
             String datadeNascimento,String dataDePagamento,double Peso) {
         this.nome = nome;
@@ -34,14 +28,12 @@ public class Pessoa {
         this.pesoInicial = Peso;
         this.matriculado = true;
         this.datadePagamento = dataDePagamento;
-        
-       
+     
     }
     public boolean situacao(){        
         if(this.matriculado){           
             return true; }                  
-        return false;
-        
+        return false;      
         
     }
     
@@ -66,14 +58,14 @@ public class Pessoa {
         else
             texto = "Nao matriculado |";    
         texto += "Nome:"+this.nome+ "|";
-        texto +="Data de Pagamento:"+this.datadePagamento;
-        
+        texto +="Data de Pagamento:"+this.datadePagamento;        
         return texto;
-        
-    
-    
+
     }
     
+    public void Paga(){
+        
     
-    
+    }
+
 }

@@ -1,11 +1,8 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Professor extends Pessoa{
     static private int qtdEspecialidade;
     private String especialidade[];
-    private String datadeRecebimento;
-    private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    private String datadeRecebimento;    
     private boolean empregado;
     private Pessoa a;
     
@@ -38,6 +35,7 @@ public class Professor extends Pessoa{
     
     }
     
+    @Override
     public String getDatadePagamento(){
         return this.datadeRecebimento;
     }
