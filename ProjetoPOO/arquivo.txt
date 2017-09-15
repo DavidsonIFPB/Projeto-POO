@@ -1,7 +1,2 @@
-
-teste teste teste teste 70.0
-
-teste teste teste teste 72.0
-teste tste teste teste 70.0
     70.0
     80.0

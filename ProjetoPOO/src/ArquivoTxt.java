@@ -26,23 +26,44 @@ public class ArquivoTxt {
         }
     
     }
-    public String lerArquivoTxt(){
+    public String lerArquivosTxt(int a){
         String linha = "";
+        String frase = linha;
+        String array[] = new String[100];
         try{
             FileReader fr = new FileReader(arquivo);
             BufferedReader br = new BufferedReader(fr);
             
             //enquanto houver mais linhas
-            while (br.ready()) {
-                
-                linha += br.readLine()+"\n";
+            while (br.ready()) {                
+                frase = br.readLine()+"\n";
+                array = frase.split(" ");
+                if(a==1)
+                    //retorna nomes
+                    linha+=array[0]+"\n";
+                else
+                    if(a==2)
+                        //retorna CPF                        
+                       linha+=array[1]+"\n";
+                else
+                    if(a==3)
+                        //retorna dataDenascimento
+                       linha+=array[2]+"\n"; 
+                else
+                    if(a==4)
+                        //retorna dataDePagamento
+                       linha+=array[3]+"\n"; 
+                else
+                    if(a==5)
+                       //retorna Peso
+                       linha+=array[4]+"\n"; 
             }
             br.close();
             fr.close();
         
         } catch (IOException ex) {            
         }            
-        
+                
         return linha;
     }      
         

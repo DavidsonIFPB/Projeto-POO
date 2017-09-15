@@ -32,10 +32,7 @@ public class Pessoa {
         String texto;
         texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
         txt.criaArquivoTxt(texto);               
-        String frase = txt.lerArquivoTxt();
-        String array[] = new String[100];
-        array = frase.split(" ");
-        System.out.println(array[4]);
+        
         
      
     }
