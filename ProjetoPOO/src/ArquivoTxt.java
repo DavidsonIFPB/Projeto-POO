@@ -34,7 +34,7 @@ public class ArquivoTxt {
             
             //enquanto houver mais linhas
             while (br.ready()) {
-                //lê a proxima linha
+                
                 linha += br.readLine()+"\n";
             }
             br.close();
