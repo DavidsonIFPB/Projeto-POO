@@ -22,12 +22,17 @@ public class Pessoa {
 
     public void cadastraPessoa(String nome,String CPF,
             String datadeNascimento,String dataDePagamento,double Peso) {
+        ArquivoTxt txt = new ArquivoTxt();
         this.nome = nome;
         this.CPF = CPF;
         this.dataDeNascimento = datadeNascimento;
         this.pesoInicial = Peso;
         this.matriculado = true;
         this.datadePagamento = dataDePagamento;
+        String texto;
+        texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
+        txt.criaArquivoTxt(texto);
+        
      
     }
     public boolean situacao(){        

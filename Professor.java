@@ -19,6 +19,7 @@ public class Professor extends Pessoa{
         super.dataDeNascimento = dataDeNascimento;
         this.datadeRecebimento = dataDePagamento;
         super.pesoAtual = Peso;
+        
     }
     
     @Override
