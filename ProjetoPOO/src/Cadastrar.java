@@ -12,6 +12,7 @@ public class Cadastrar extends javax.swing.JPanel {
     private Pessoa aluno [] = new Pessoa[max];
     private Professor professor [] = new Professor[max];
     
+    
     public Cadastrar() {
         initComponents();        
     }
@@ -170,6 +171,8 @@ public class Cadastrar extends javax.swing.JPanel {
 //                
                 aluno_2.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
+                
+                
 //                cont +=1;
             }
             else{

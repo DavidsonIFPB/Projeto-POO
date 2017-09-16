@@ -25,7 +25,7 @@ public class ArquivoTxt {
         }
     
     }
-    public String lerArquivosTxt(int a){
+    public String lerArquivosTxt(int a,String compara){
         String linha = "";
         String frase = linha;
         String array[] = new String[100];
@@ -35,27 +35,28 @@ public class ArquivoTxt {
             
             //enquanto houver mais linhas
             while (br.ready()) {                
-                frase = br.readLine()+"\n";
+                frase = br.readLine();
                 array = frase.split(" ");
-                if(a==1)
+                if(a==1 && compara.equals(array[0])){
                     //retorna nomes
-                    linha+=array[0]+"\n";
+                    
+                    linha+=frase;}
                 else
-                    if(a==2)
-                        //retorna CPF                        
-                       linha+=array[1];
+                    if(a==2 && compara.equals(array[1])){
+                                          
+                       linha+=frase;}
                 else
-                    if(a==3)
+                    if(a==3 && compara.equals(array[2]))
                         //retorna dataDenascimento
-                       linha+=array[2]+"\n"; 
+                       linha+=frase; 
                 else
-                    if(a==4)
+                    if(a==4 && compara.equals(array[3]))
                         //retorna dataDePagamento
-                       linha+=array[3]+"\n"; 
+                       linha+=frase;
                 else
-                    if(a==5)
+                    if(a==5 && compara.equals(array[4]))
                        //retorna Peso
-                       linha+=array[4]+"\n"; 
+                       linha+=frase;
             }
             br.close();
             fr.close();

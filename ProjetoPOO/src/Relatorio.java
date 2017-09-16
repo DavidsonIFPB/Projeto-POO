@@ -9,7 +9,7 @@
  * @author Davidson
  */
 public class Relatorio extends javax.swing.JFrame {
-        
+        private ArquivoTxt pesquisa = new ArquivoTxt();
         private Pessoa aluno [] = new Pessoa[10];
         private Professor professor [] = new Professor[10]; 
         
@@ -32,10 +32,15 @@ public class Relatorio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         area = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        data = new javax.swing.JRadioButton();
+        nome = new javax.swing.JRadioButton();
+        cpf = new javax.swing.JRadioButton();
+        texto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,46 +65,74 @@ public class Relatorio extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(data);
+        data.setText("Data de Pagamento");
+
+        buttonGroup1.add(nome);
+        nome.setText("Nome");
+
+        buttonGroup1.add(cpf);
+        cpf.setText("CPF");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jButton1)
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(data)
+                                .addGap(18, 18, 18)
+                                .addComponent(cpf)
+                                .addGap(33, 33, 33)
+                                .addComponent(nome)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jButton1)
-                .addGap(59, 59, 59)
-                .addComponent(jButton2)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addGap(87, 87, 87)
+                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(data)
+                    .addComponent(cpf)
+                    .addComponent(nome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(0, 80, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        area.setText("");         
         
-        area.setText("");       
-        String texto="";        
-        for(Pessoa a : aluno){ 
-            if(a!=null){              
-                    texto += a.Relatorio()+"\n";
-                    area.setText(texto);                    
-            }  
-        }          
+        if(nome.isSelected())                
+            area.setText(pesquisa.lerArquivosTxt(1,texto.getText()));
+        else
+            if(cpf.isSelected())
+            area.setText(pesquisa.lerArquivosTxt(2,texto.getText()));        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -151,8 +184,13 @@ public class Relatorio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea area;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton cpf;
+    private javax.swing.JRadioButton data;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton nome;
+    private javax.swing.JTextField texto;
     // End of variables declaration//GEN-END:variables
 }
