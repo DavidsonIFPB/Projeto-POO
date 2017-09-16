@@ -1,15 +1,11 @@
 import javax.swing.JFrame;
 
-
-
 public class Cadastrar extends javax.swing.JPanel {
-    static private int id;
-    
+    static private int id;   
     
     private Relatorio a = new Relatorio();
     private Pessoa aluno_2 = new Pessoa();    
-    private Professor professor  = new Professor();
-    
+    private Professor professor  = new Professor();    
     
     public Cadastrar() {
         initComponents();        
@@ -161,30 +157,23 @@ public class Cadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_tipocaixaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            if(tipocaixa.getSelectedItem()=="Aluno"){
-            
+            if(tipocaixa.getSelectedItem()=="Aluno"){            
                 aluno_2.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
             }
             else{                
                 professor.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
-
             }
         nome.setText("");
         cpf.setText("");
         data.setText("");
         data1.setText("");
-        peso.setText("");
-        
-            
-            
-        
+        peso.setText("");      
     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
         a.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -35,26 +35,24 @@ public class ArquivoTxt {
             while (br.ready()) {                
                 frase = br.readLine();
                 array = frase.split(" ");
-                if(a==1 && compara.equals(array[0])){
-                    //retorna nomes
-                    
-                    linha+=frase;}
+                if(a==1 && compara.equals(array[0]))  
+                    //Compara nomes                    
+                    linha+=frase+"\n";
                 else
-                    if(a==2 && compara.equals(array[1])){
-                                          
-                       linha+=frase;}
+                    if(a==2 && compara.equals(array[1]))                                          
+                       linha+=frase+"\n";
                 else
                     if(a==3 && compara.equals(array[2]))
                         //retorna dataDenascimento
-                       linha+=frase; 
+                       linha+=frase+"\n";
                 else
                     if(a==4 && compara.equals(array[3]))
                         //retorna dataDePagamento
-                       linha+=frase;
+                       linha+=frase+"\n";
                 else
                     if(a==5 && compara.equals(array[4]))
                        //retorna Peso
-                       linha+=frase;
+                       linha+=frase+"\n";
             }
             br.close();
             fr.close();

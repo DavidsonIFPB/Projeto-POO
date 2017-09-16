@@ -2,16 +2,16 @@ import java.io.File;
 
 public class Professor extends Pessoa{
     static private int qtdEspecialidade;
-    private String especialidade[];
+    //private String especialidade[];    
     private String datadeRecebimento;    
-    private boolean empregado;
+    private boolean pago;
     private Pessoa a;
     private File arquivo = new File("professor.txt");
     private ArquivoTxt txt = new ArquivoTxt();
     
     public Professor(){
-        this.especialidade= new String [5];
-        this.empregado = true;
+        //this.especialidade= new String [5];
+        this.pago = true;
     }
     
     @Override
@@ -24,22 +24,10 @@ public class Professor extends Pessoa{
         super.pesoAtual = Peso;
         String texto;
         texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
-        txt.criaArquivoTxt(texto,arquivo); 
-        
+        txt.criaArquivoTxt(texto,arquivo);         
     }
-    
-    @Override
-    public String Relatorio(){
-        String texto;
-        if(this.empregado)
-            texto = "Matriculado | ";
-        else
-            texto = "Nao matriculado |";    
-        texto += "Nome:"+this.nome+ "|";
-        texto +="Data de Recibimento:"+this.datadeRecebimento;
-        
-        return texto;
-    
+    public boolean getPago(){
+        return this.pago;
     }
     
     @Override
