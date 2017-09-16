@@ -8,6 +8,7 @@ public class Cadastrar extends javax.swing.JPanel {
     private int cont =0;
     private int max = 10;
     private Relatorio a = new Relatorio();
+    private Pessoa aluno_2 = new Pessoa();
     private Pessoa aluno [] = new Pessoa[max];
     private Professor professor [] = new Professor[max];
     
@@ -161,12 +162,15 @@ public class Cadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_tipocaixaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(cont<max)
+//        if(cont<max)
             if(tipocaixa.getSelectedItem()=="Aluno"){
-                aluno[cont]= new Pessoa();
-                aluno[cont].cadastraPessoa(nome.getText(),cpf.getText(),
+//                aluno[cont]= new Pessoa();
+//                aluno[cont].cadastraPessoa(nome.getText(),cpf.getText(),
+//                        data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
+//                
+                aluno_2.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
-                cont +=1;
+//                cont +=1;
             }
             else{
                 professor[cont]= new Professor();
@@ -175,8 +179,8 @@ public class Cadastrar extends javax.swing.JPanel {
                 cont +=1;         
             
             }
-        else
-            System.out.println("Numero maximo atingido");
+//        else
+//            System.out.println("Numero maximo atingido");
         nome.setText("");
         cpf.setText("");
         data.setText("");

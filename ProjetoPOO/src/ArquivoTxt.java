@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -44,7 +43,7 @@ public class ArquivoTxt {
                 else
                     if(a==2)
                         //retorna CPF                        
-                       linha+=array[1]+"\n";
+                       linha+=array[1];
                 else
                     if(a==3)
                         //retorna dataDenascimento
@@ -65,7 +64,8 @@ public class ArquivoTxt {
         }            
                 
         return linha;
-    }      
+    } 
+    
         
     
         
