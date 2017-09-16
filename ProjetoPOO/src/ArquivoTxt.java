@@ -5,10 +5,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ArquivoTxt {
-    File arquivo = new File("arquivo.txt");
-    
-    public void criaArquivoTxt(String texto) {
+public class ArquivoTxt { 
+    public void criaArquivoTxt(String texto,File arquivo) {
         try{
             if(!arquivo.exists()){
                 arquivo.createNewFile();
@@ -25,7 +23,7 @@ public class ArquivoTxt {
         }
     
     }
-    public String lerArquivosTxt(int a,String compara){
+    public String lerArquivosTxt(int a,String compara,File arquivo){
         String linha = "";
         String frase = linha;
         String array[] = new String[100];
@@ -70,7 +68,7 @@ public class ArquivoTxt {
         
     
         
-    }
+}
    
     
 

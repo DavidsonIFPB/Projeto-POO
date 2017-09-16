@@ -1,3 +1,4 @@
+import java.io.File;
 
 public class Professor extends Pessoa{
     static private int qtdEspecialidade;
@@ -5,6 +6,8 @@ public class Professor extends Pessoa{
     private String datadeRecebimento;    
     private boolean empregado;
     private Pessoa a;
+    private File arquivo = new File("professor.txt");
+    private ArquivoTxt txt;
     
     public Professor(){
         this.especialidade= new String [5];
@@ -19,6 +22,9 @@ public class Professor extends Pessoa{
         super.dataDeNascimento = dataDeNascimento;
         this.datadeRecebimento = dataDePagamento;
         super.pesoAtual = Peso;
+        String texto;
+        texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
+        txt.criaArquivoTxt(texto,arquivo); 
         
     }
     

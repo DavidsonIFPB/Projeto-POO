@@ -1,3 +1,6 @@
+
+import java.io.File;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,15 +12,8 @@
  * @author Davidson
  */
 public class Relatorio extends javax.swing.JFrame {
-        private ArquivoTxt pesquisa = new ArquivoTxt();
-        private Pessoa aluno [] = new Pessoa[10];
-        private Professor professor [] = new Professor[10]; 
+        private ArquivoTxt pesquisa = new ArquivoTxt();           
         
-        public void setDados(Pessoa aluno[],Professor professores[]){
-            this.aluno= aluno;
-            this.professor = professores;       
-        
-        }
         
     public Relatorio() {
         initComponents();
@@ -67,12 +63,27 @@ public class Relatorio extends javax.swing.JFrame {
 
         buttonGroup1.add(data);
         data.setText("Data de Pagamento");
+        data.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(nome);
         nome.setText("Nome");
+        nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(cpf);
         cpf.setText("CPF");
+        cpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpfActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,26 +137,48 @@ public class Relatorio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        File arquivo = new File("arquivo.txt");
         area.setText("");         
         
-        if(nome.isSelected())                
-            area.setText(pesquisa.lerArquivosTxt(1,texto.getText()));
+        if(nome.isSelected())            
+            area.setText(pesquisa.lerArquivosTxt(1,texto.getText(),arquivo));
+        
         else
-            if(cpf.isSelected())
-            area.setText(pesquisa.lerArquivosTxt(2,texto.getText()));        
+            if(cpf.isSelected())                 
+                area.setText(pesquisa.lerArquivosTxt(2,texto.getText(),arquivo));
+            
+        else            
+            area.setText(pesquisa.lerArquivosTxt(3,texto.getText(),arquivo));
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         area.setText("");
-        String texto2= "";
-        for (Professor a : professor){
-            if(a!=null)   {               
-                    texto2 += a.Relatorio()+"\n";
-                    area.setText(texto2);
-            }   
-        }
+        File arquivo = new File("professor.txt");
+        
+        if(nome.isSelected())            
+            area.setText(pesquisa.lerArquivosTxt(1,texto.getText(),arquivo));
+        
+        else
+            if(cpf.isSelected())                 
+                area.setText(pesquisa.lerArquivosTxt(2,texto.getText(),arquivo));
+            
+        else            
+            area.setText(pesquisa.lerArquivosTxt(3,texto.getText(),arquivo));
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataActionPerformed
+        area.setText("");
+    }//GEN-LAST:event_dataActionPerformed
+
+    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
+        area.setText("");
+    }//GEN-LAST:event_cpfActionPerformed
+
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
+        area.setText("");
+    }//GEN-LAST:event_nomeActionPerformed
 
     /**
      * @param args the command line arguments

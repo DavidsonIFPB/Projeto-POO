@@ -129,6 +129,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Data de Pagamento"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dataActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="nome">
       <Properties>
@@ -137,6 +140,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Nome"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="cpf">
       <Properties>
@@ -145,6 +151,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="CPF"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpfActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="texto">
     </Component>

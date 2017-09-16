@@ -5,12 +5,10 @@ import javax.swing.JFrame;
 public class Cadastrar extends javax.swing.JPanel {
     static private int id;
     
-    private int cont =0;
-    private int max = 10;
+    
     private Relatorio a = new Relatorio();
-    private Pessoa aluno_2 = new Pessoa();
-    private Pessoa aluno [] = new Pessoa[max];
-    private Professor professor [] = new Professor[max];
+    private Pessoa aluno_2 = new Pessoa();    
+    private Professor professor  = new Professor();
     
     
     public Cadastrar() {
@@ -165,25 +163,16 @@ public class Cadastrar extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 //        if(cont<max)
             if(tipocaixa.getSelectedItem()=="Aluno"){
-//                aluno[cont]= new Pessoa();
-//                aluno[cont].cadastraPessoa(nome.getText(),cpf.getText(),
-//                        data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
-//                
+            
                 aluno_2.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
-                
-                
-//                cont +=1;
+
             }
-            else{
-                professor[cont]= new Professor();
-                professor[cont].cadastraPessoa(nome.getText(),cpf.getText(),
+            else{                
+                professor.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
-                cont +=1;         
-            
+
             }
-//        else
-//            System.out.println("Numero maximo atingido");
         nome.setText("");
         cpf.setText("");
         data.setText("");
@@ -197,7 +186,7 @@ public class Cadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        a.setDados(aluno, professor);
+        
         a.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
