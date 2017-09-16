@@ -148,7 +148,7 @@ public class Relatorio extends javax.swing.JFrame {
                 area.setText(pesquisa.lerArquivosTxt(2,texto.getText(),arquivo));
             
         else            
-            area.setText(pesquisa.lerArquivosTxt(3,texto.getText(),arquivo));
+            area.setText(pesquisa.lerArquivosTxt(4,texto.getText(),arquivo));
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -164,7 +164,7 @@ public class Relatorio extends javax.swing.JFrame {
                 area.setText(pesquisa.lerArquivosTxt(2,texto.getText(),arquivo));
             
         else            
-            area.setText(pesquisa.lerArquivosTxt(3,texto.getText(),arquivo));
+            area.setText(pesquisa.lerArquivosTxt(4,texto.getText(),arquivo));
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -7,7 +7,7 @@ public class Professor extends Pessoa{
     private boolean empregado;
     private Pessoa a;
     private File arquivo = new File("professor.txt");
-    private ArquivoTxt txt;
+    private ArquivoTxt txt = new ArquivoTxt();
     
     public Professor(){
         this.especialidade= new String [5];
@@ -16,7 +16,7 @@ public class Professor extends Pessoa{
     
     @Override
     public void cadastraPessoa(String nome,String CPF,
-            String datadeNascimento,String dataDePagamento,double Peso) {
+            String datadeNascimento,String dataDePagamento,double Peso) {        
         super.CPF= CPF;
         super.nome = nome;
         super.dataDeNascimento = dataDeNascimento;

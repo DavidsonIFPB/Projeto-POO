@@ -161,12 +161,10 @@ public class Cadastrar extends javax.swing.JPanel {
     }//GEN-LAST:event_tipocaixaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        if(cont<max)
             if(tipocaixa.getSelectedItem()=="Aluno"){
             
                 aluno_2.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
-
             }
             else{                
                 professor.cadastraPessoa(nome.getText(),cpf.getText(),

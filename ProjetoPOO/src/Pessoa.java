@@ -35,9 +35,8 @@ public class Pessoa {
         this.datadePagamento = dataDePagamento;
         String texto;
         texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
-        txt.criaArquivoTxt(texto,arquivo);               
-        
-        
+        txt.criaArquivoTxt(texto,arquivo);              
+  
      
     }
     public boolean situacao(){        
